@@ -15,5 +15,14 @@ import partytown from "@astrojs/partytown";
 // https://astro.build/config
 export default defineConfig({
   site: "https://sitegoeshere.com",
-  integrations: [tailwind(), image(), sitemap(), partytown()]
+  integrations: [
+    tailwind({
+      config: {
+        applyBaseStyles: false,
+      },
+    }),
+    image(),
+    sitemap(),
+    partytown(),
+  ],
 });
