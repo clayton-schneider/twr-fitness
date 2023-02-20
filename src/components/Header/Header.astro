@@ -17,12 +17,12 @@ const { className } = Astro.props;
 ---
 
 <header class={(className ? className : "") + " bg-primary px-edge relative"}>
-  <div class="max-w-screen-2xl mx-auto py-4 flex items-center justify-between">
+  <div class="mx-auto flex max-w-screen-2xl items-center justify-between py-4">
     <a href="/">
-      <Image
-        src={import("@img/hundred-million-logo-white.png")}
+      <!-- <Image
+        src={}
         alt="hundred million logo"
-      />
+      /> -->
     </a>
 
     <NavMenu links={links} client:load />

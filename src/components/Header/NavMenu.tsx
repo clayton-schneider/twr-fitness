@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Hamburger from "./Hamburger";
-import PrimaryBtn from "@components/buttons/PrimaryBtn";
 
 interface Props {
   links: {
@@ -34,12 +33,9 @@ const NavMenu = ({ links }: Props) => {
             <a href={link.link}>{link.linkText}</a>
           </li>
         ))}
-        <PrimaryBtn
-          to="/request-a-quote"
-          className="!block w-full text-center lg:text-left lg:w-auto"
-        >
-          Join Us
-        </PrimaryBtn>
+        <a href="" className="!block w-full text-center lg:text-left lg:w-auto">
+          Call To Action
+        </a>
       </ul>
       <Hamburger clicked={handleClick} isOpen={isOpen} color="white" />
     </div>
