@@ -1,48 +1,65 @@
 ---
-const involveLinks = [
-  { link: "/teachers", text: "Teachers" },
-  { link: "/individuals", text: "Individuals" },
-  { link: "/organizations", text: "Organizations" },
-];
-
-const resourceLinks = [
-  { link: "/about-us", text: "About Us" },
-  { link: "/articles", text: "Articles" },
-  { link: "/resources", text: "Resources" },
-];
-
-const socialLinks = [
-  { name: "mdi:twitter", link: "/" },
-  { name: "mdi:instagram", link: "/" },
-  { name: "ic:baseline-tiktok", link: "/" },
-];
-
-import { Image } from "@astrojs/image/components";
+import { socials } from "@data/general";
+import { hours } from "@data/general";
+import { contacts } from "@data/general";
 import { Icon } from "astro-icon";
 ---
 
-<section class="text-text-light">
-  <footer class="px-edge py-12 bg-primary">
-    <div class="max-w-screen-2xl mx-auto flex justify-between">
-      <div>
-        <Image
-          src="https://via.placeholder.com/80x150"
-          alt="CHANGE ME ALT TEXT"
-        />
-        <div class="flex space-x-2 mt-6">
+<section class="py-10 px-edge">
+  <footer>
+    <div
+      class="mx-auto flex flex-col text-center lg:text-left gap-10 items-center lg:flex-row lg:items-start max-w-screen-2xl justify-between"
+    >
+      <div class="max-w-sm mx-auto lg:mx-0">
+        <Icon name="logo" width="158" height="60" class="mx-auto lg:mx-0" />
+        <p class="mt-2 text-lg">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum non ab
+          exercitationem veritatis, labore nobis ipsa officiis magnam sequi,
+          iusto asperiores.
+        </p>
+        <div class="mt-6 flex justify-center lg:justify-start space-x-2">
           {
-            socialLinks.map((link) => (
-              <a href={link.link}>
-                <Icon name={link.name} size={24} class="fill-primary" />
+            socials.map((social) => (
+              <a href={social.link}>
+                <Icon name={social.icon} size={30} color="black" />
               </a>
             ))
           }
         </div>
       </div>
+
+      <div>
+        <p class="font-bold text-lg">Our Hours</p>
+        <ul class="mt-2">
+          {
+            hours.map((hour) => (
+              <li>
+                <p>
+                  {hour.day}: {hour.open}-{hour.close}
+                </p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <p class="font-bold text-lg">Contact Us</p>
+        <ul class="mt-2">
+          {
+            contacts.map((contact) => (
+              <li class="flex space-x-2 justify-center lg:justify-start">
+                <Icon name={contact.icon} size={30} />
+                <p>{contact.text}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     </div>
   </footer>
   <div class="bg-primary-darker py-4">
-    <p class="text-xl text-center">
+    <p class="text-center text-xl">
       Copyright © 2022 Website Name | All Right Reserved | Powered By <a
         href="https://www.simply-sprout.com">Simply Sprout</a
       >

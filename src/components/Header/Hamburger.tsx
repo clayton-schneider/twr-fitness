@@ -1,9 +1,8 @@
 interface Props {
   isOpen: boolean;
   clicked: () => void;
-  color: string;
 }
-const Hamburger = ({ isOpen, clicked, color }: Props) => {
+const Hamburger = ({ isOpen, clicked }: Props) => {
   return (
     <button
       onClick={clicked}
@@ -11,22 +10,19 @@ const Hamburger = ({ isOpen, clicked, color }: Props) => {
     >
       <span
         className={
-          "mx-auto my-1 block h-1 w-7 transition-all duration-300 " +
-          `bg-${color} ` +
+          "mx-auto my-1 block h-1 w-7 transition-all duration-300 bg-black " +
           (isOpen ? "translate-y-2 rotate-45 " : "")
         }
       ></span>
       <span
         className={
-          "mx-auto my-1 block h-1 w-7 transition-all duration-300 " +
-          `bg-${color} ` +
+          "bg-black mx-auto my-1 block h-1 w-7 transition-all duration-300 " +
           (isOpen ? "opacity-0 " : "")
         }
       ></span>
       <span
         className={
-          "mx-auto my-1 block h-1 w-7 transition-all duration-300 " +
-          `bg-${color} ` +
+          "bg-black mx-auto my-1 block h-1 w-7 transition-all duration-300 " +
           (isOpen ? "-translate-y-2 -rotate-45 " : "")
         }
       ></span>

@@ -1,13 +1,20 @@
 ---
-import { Image } from "@astrojs/image/components";
-
+import { Icon } from "astro-icon";
 // Import components
 import NavMenu from "./NavMenu";
 const links = [
   { linkText: "Home", link: "/" },
   { linkText: "About", link: "/about" },
-  { linkText: "Articles", link: "/articles" },
-  { linkText: "Resources", link: "/resources" },
+  {
+    linkText: "Services",
+    link: "/services",
+    sublinks: [
+      { linkText: "Service One", link: "/services/service-one" },
+      { linkText: "Service Two", link: "/services/service-two" },
+      { linkText: "Service Three", link: "/services/service-three" },
+    ],
+  },
+  { linkText: "Contact", link: "/contact" },
 ];
 
 interface Props {
@@ -16,14 +23,9 @@ interface Props {
 const { className } = Astro.props;
 ---
 
-<header class={(className ? className : "") + " bg-primary px-edge relative"}>
+<header class={(className ? className : "") + " px-edge relative"}>
   <div class="mx-auto flex max-w-screen-2xl items-center justify-between py-4">
-    <a href="/">
-      <!-- <Image
-        src={}
-        alt="hundred million logo"
-      /> -->
-    </a>
+    <a href="/"><Icon name="logo" width="158" height="60" /></a>
 
     <NavMenu links={links} client:load />
   </div>
