@@ -1,5 +1,14 @@
 ---
+import ContactForm from "@components/Forms/ContactForm";
 import Layout from "src/layouts/Layout.astro";
+
+const fields = [
+  { fieldType: "text", id: "first", name: "First Name" },
+  { fieldType: "text", id: "last", name: "Last Name" },
+  { fieldType: "email", id: "email", name: "Email Address" },
+  { fieldType: "tel", id: "phone", name: "Phone Number" },
+  { fieldType: "textarea", id: "message", name: "Message" },
+];
 ---
 
 <Layout
@@ -11,6 +20,13 @@ import Layout from "src/layouts/Layout.astro";
   <section class="px-edge py-10 lg:py-20">
     <div class="max-w-screen-xl mx-auto">
       <h1>Hi</h1>
+      <ContactForm
+        client:load
+        name="Simply Sprout Contact Form"
+        message="Thank you for submitting this contact form. We will reach out to you shortly."
+        error="There was an error submitting this form. Please refresh and try again. If the problem persists, please send us an email directly."
+        fields={fields}
+      />
     </div>
   </section>
 </Layout>
