@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets";
+import cover from "~/assets/covers/top-cover.png";
+import ctaImage from "~/assets/twr-fitness-cta.png";
+---
+
+<section class="bg-primary-dark px-edge py-10 lg:py-20 relative">
+  <Image
+    class="absolute left-0 top-0 right-0"
+    quality={100}
+    src={cover}
+    alt="woman smiling in athletic clothes"
+  />
+
+  <div
+    class="mt-20 max-w-screen-2xl mx-auto relative z-10 flex items-center justify-between"
+  >
+    <div class="flex gap-10">
+      <Image src={ctaImage} alt="twr fitness clients in action" />
+      <div class="">
+        <h2 class="max-w-md font-oswald font-bold text-6xl text-white">
+          Make <span class="text-primary-lighter">Today</span> the Day for Change!
+        </h2>
+        <p class="mt-5 max-w-xl text-white text-lg">
+          Our health is what enables us to enjoy the things we love doing,
+          whether that’s a round of golf, hiking with your significant other, or
+          playing with the kids. See how you can enjoy life a little bit more,
+          whatever your reason may be.
+        </p>
+      </div>
+    </div>
+
+    <a
+      href="/"
+      class="mt-7 bg-accent py-5 px-6 rounded text-white font-bold inline-block"
+      >Start Your Fitness Journey For Free</a
+    >
+  </div>
+</section>
