@@ -102,14 +102,14 @@ const ContactForm = ({
   return (
     <form
       onSubmit={(e) => handleSubmit(e)}
-      className="my-5 mt-10 grid w-full grow grid-cols-1 gap-4 lg:grid-cols-2"
+      className="flex-grow shrink-0 min-w-[400px] grid w-full grid-cols-1 gap-4"
     >
       {fields.map((field, key) => (
         <div
           className={
             (field.fieldType === "textarea"
               ? "col-span-full"
-              : "col-span-full lg:col-span-1") + " relative"
+              : "col-span-full ") + " relative"
           }
           key={`input-${key}`}
         >

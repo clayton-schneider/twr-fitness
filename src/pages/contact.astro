@@ -1,32 +1,91 @@
 ---
+import { Image } from "astro:assets";
+import contactHero from "~/assets/pages/contact/contact-hero.png";
+import heroCover from "~/assets/covers/hero-cover.png";
+
 import ContactForm from "@components/Forms/ContactForm";
 import Layout from "src/layouts/Layout.astro";
 
 const fields = [
   { fieldType: "text", id: "first", name: "First Name" },
-  { fieldType: "text", id: "last", name: "Last Name" },
   { fieldType: "email", id: "email", name: "Email Address" },
-  { fieldType: "tel", id: "phone", name: "Phone Number" },
   { fieldType: "textarea", id: "message", name: "Message" },
 ];
+
+import { socials, contacts } from "@data/general";
+import { Icon } from "astro-icon";
 ---
 
 <Layout
   seo={{
-    title: "Contact | Simply Sprout Starter",
+    title: "Contact | TWR Fitness",
     description: "The starter template for all Simply Sprout websites.",
   }}
 >
-  <section class="px-edge py-10 lg:py-20">
-    <div class="max-w-screen-xl mx-auto">
-      <h1>Hi</h1>
-      <ContactForm
-        client:load
-        name="Simply Sprout Contact Form"
-        message="Thank you for submitting this contact form. We will reach out to you shortly."
-        error="There was an error submitting this form. Please refresh and try again. If the problem persists, please send us an email directly."
-        fields={fields}
-      />
+  <section
+    class="px-edge py-20 lg:py-40 relative flex justify-center items-center"
+  >
+    <Image
+      class="absolute inset-0 h-full object-cover object-right lg:object-center"
+      quality={100}
+      src={contactHero}
+      alt="woman smiling in athletic clothes"
+    />
+    <Image
+      class="absolute left-0 bottom-0 right-0"
+      src={heroCover}
+      alt="decorative wave cover"
+    />
+
+    <div class="text-white relative z-10">
+      <h1 class="font-oswald font-bold text-9xl">Contact</h1>
+      <ul class="mt-4 space-y-4 text-center">
+        {
+          contacts.map((contact) => (
+            <li class="flex space-x-2 justify-center">
+              <Icon name={contact.icon} size={30} />
+              <p class="text-lg font-light">{contact.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="px-edge py-10 lg:py-20 bg-bg">
+    <div
+      class="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center lg:items-start justify-between gap-10"
+    >
+      <div class="flex-grow w-full max-w-3xl">
+        <ContactForm
+          client:load
+          name="TWR Fitness Contact Form"
+          message="Thank you for submitting this contact form. We will reach out to you shortly."
+          error="There was an error submitting this form. Please refresh and try again. If the problem persists, please send us an email directly."
+          fields={fields}
+        />
+      </div>
+
+      <div class="flex-grow w-full">
+        <div class="h-[400px]">
+          <iframe
+            class="w-full h-full"
+            src="https://www.google.com/maps/embed/v1/place?q=TWR+Fitness,+1502+Highland+Ave,+Needham,+MA+02492&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+          ></iframe>
+        </div>
+
+        <div class="mt-4">
+          <ul class="flex justify-end gap-2">
+            {
+              socials.map((social) => (
+                <a href={social.link} target="_blank">
+                  <Icon name={social.icon} size={30} class="text-primary" />
+                </a>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 </Layout>
