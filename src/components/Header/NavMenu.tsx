@@ -31,7 +31,7 @@ const NavMenu = ({ links }: Props) => {
             return (
               <li key={idx} className="group relative">
                 <a href={link.link}>{link.linkText}</a>
-                <ul className="z-50 w-full pt-1 pl-5 text-center text-black lg:absolute lg:left-1/2 lg:hidden lg:w-[200px] lg:-translate-x-1/2 lg:pl-0  lg:shadow lg:group-hover:block">
+                <ul className="z-50 w-full pt-1 pl-5 text-center text-black lg:absolute lg:left-1/2 lg:hidden lg:w-[275px] lg:-translate-x-1/2 lg:pl-0  lg:shadow lg:group-hover:block">
                   {link.sublinks.map((sublink, idx) => (
                     <li
                       key={idx}
@@ -56,9 +56,9 @@ const NavMenu = ({ links }: Props) => {
         <li>
           <a
             href=""
-            className="!block w-full text-center lg:text-left lg:w-auto"
+            className="!block py-5 px-6 font-bold text-xl bg-accent rounded text-white w-full text-center lg:text-left lg:w-auto"
           >
-            Call To Action
+            Start Your Fitness Journey
           </a>
         </li>
       </ul>
