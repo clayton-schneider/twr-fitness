@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import cover from "~/assets/covers/top-cover.png";
+import roadblocksImg from "~/assets/roadblocks-bg.png";
+
+const roadblocks = [
+  "Lack of energy → feeling more energized after a workout",
+  "Claiming you don’t like fitness to → missing your workouts on your rest days",
+  "Not having the time → a consistent predictable schedule",
+  "Unsure where to begin → a custom plan of attack",
+];
+---
+
+<section class="bg-primary-dark px-edge py-10 lg:py-20 relative min-h-[1000px]">
+  <Image
+    class="absolute inset-0 h-full object-cover"
+    src={roadblocksImg}
+    alt="a peek into the twr studio"
+  />
+  <Image
+    class="absolute left-0 top-0 right-0"
+    quality={100}
+    src={cover}
+    alt="cover"
+  />
+  <div class="mt-20 max-w-screen-2xl mx-auto relative z-10">
+    <div class="flex gap-10">
+      <div class="max-w-xl">
+        <h2 class="max-w-lg font-oswald font-bold text-6xl text-white">
+          Fitness Doesn't Need to be Difficult
+        </h2>
+        <p class="mt-5 text-white text-lg">
+          When you have a custom plan designed for your specific needs and
+          weekly accountability you will go from:
+        </p>
+        <ul class="mt-4 list-disc pl-5 font-bold text-white text-xl space-y-4">
+          {roadblocks.map((roadblock) => <li class="text">{roadblock}</li>)}
+        </ul>
+      </div>
+    </div>
+
+    <a
+      href="/"
+      class="mt-7 bg-accent py-5 px-6 rounded text-white font-bold inline-block"
+      >Start Your Fitness Journey For Free</a
+    >
+  </div>
+</section>

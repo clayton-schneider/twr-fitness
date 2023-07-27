@@ -1,48 +1,38 @@
 ---
 import { Image } from "astro:assets";
 import cover from "~/assets/covers/top-cover.png";
-import whyUsImg from "~/assets/why-us-bg.png";
-
-const roadblocks = [
-  "Lack of energy → feeling more energized after a workout",
-  "Claiming you don’t like fitness to → missing your workouts on your rest days",
-  "Not having the time → a consistent predictable schedule",
-  "Unsure where to begin → a custom plan of attack",
-];
+import whyUsImage from "~/assets/why-us.png";
 ---
 
-<section class="bg-primary-dark px-edge py-10 lg:py-20 relative min-h-[1000px]">
-  <Image
-    class="absolute inset-0 h-full object-cover"
-    src={whyUsImg}
-    alt="a peek into the twr studio"
-  />
+<section class="bg-bg px-edge py-10 lg:py-20 relative">
   <Image
     class="absolute left-0 top-0 right-0"
     quality={100}
     src={cover}
     alt="cover"
   />
-  <div class="mt-20 max-w-screen-2xl mx-auto relative z-10">
-    <div class="flex gap-10">
-      <div class="max-w-xl">
-        <h2 class="max-w-lg font-oswald font-bold text-6xl text-white">
-          Fitness Doesn't Need to be Difficult
-        </h2>
-        <p class="mt-5 text-white text-lg">
-          When you have a custom plan designed for your specific needs and
-          weekly accountability you will go from:
-        </p>
-        <ul class="mt-4 list-disc pl-5 font-bold text-white text-xl space-y-4">
-          {roadblocks.map((roadblock) => <li class="text">{roadblock}</li>)}
-        </ul>
-      </div>
-    </div>
 
-    <a
-      href="/"
-      class="mt-7 bg-accent py-5 px-6 rounded text-white font-bold inline-block"
-      >Start Your Fitness Journey For Free</a
-    >
+  <div
+    class="mt-20 max-w-screen-2xl mx-auto relative z-10 flex items-center justify-between"
+  >
+    <Image src={whyUsImage} alt="personal trainer tristain" />
+    <div class="max-w-xl text-right">
+      <h2 class="font-oswald font-bold text-4xl text-text-dark">
+        Unleashing <span class="text-primary-lighter">Your Full Potential</span>
+        Is at the Core of <span class="text-primary-lighter">What I Do!</span>
+      </h2>
+      <p class="mt-5 text-lg">
+        TWR Fitness is a small, privately owned training facility. It’s just me
+        an my clients who, as we work to build a relationship as trainer-client,
+        feel like they are working with a friend who knows them, cares about
+        them, and provides a level of service only available in a setting like
+        this.
+      </p>
+      <a
+        href="/"
+        class="mt-7 bg-accent py-5 px-6 rounded text-white font-bold inline-block"
+        >Start Your Fitness Journey For Free</a
+      >
+    </div>
   </div>
 </section>
