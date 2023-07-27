@@ -24,7 +24,9 @@ module.exports = {
       },
       colors: {
         primary: "#271BF7",
+        "primary-lighter": "#078FE0",
         accent: "#F6AE2D",
+        bg: "#EBECF3",
         "text-light": "#FFFFFF",
         "text-dark": "#2D2D2D",
       },

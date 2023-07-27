@@ -33,7 +33,7 @@ const { className } = Astro.props;
 import logo from "@imgs/logo.png";
 ---
 
-<header class={(className ? className : "") + " px-edge relative"}>
+<header class={(className ? className : "") + " px-edge relative bg-bg"}>
   <div class="mx-auto flex max-w-screen-2xl items-center justify-between py-4">
     <a href="/">
       <Image src={logo} height={100} alt="twr logo" />

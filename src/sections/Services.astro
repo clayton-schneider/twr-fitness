@@ -1,0 +1,81 @@
+---
+import { Image } from "astro:assets";
+
+import adpImage from "@imgs/adult-personal-training.png";
+import yptImage from "@imgs/youth-personal-training.png";
+import ssdImage from "@imgs/soccer-skill-development.png";
+
+const services = [
+  {
+    title: "Adult Personal Training",
+    text: "Whether you are interested in improving your golf game, recovering from a job injury, or want to sleep better, we have the plan to get you where you want to go.",
+    img: {
+      src: adpImage,
+      alt: "adult personal training",
+    },
+    link: {
+      to: "/services/adult-personal-training",
+      text: "Learn More About Our APT Program",
+    },
+  },
+  {
+    title: "Youth Personal Training",
+    text: "Our youth personal training services help with injury recovery and with the development of athletic skills necessary to compete at the highest level.",
+    img: {
+      src: yptImage,
+      alt: "youth personal training",
+    },
+    link: {
+      to: "/services/youth-personal-training",
+      text: "Learn More About Our YPT Program",
+    },
+  },
+  {
+    title: "Soccer Skill Development",
+    text: "Looking to play soccer at the varsity or club level? Personalized soccer skill development will strengthen your soccer abilities so that you can compete at the top.",
+    img: {
+      src: ssdImage,
+      alt: "soccer skill development",
+    },
+    link: {
+      to: "/services/soccer-skill-development",
+      text: "Learn More About Our SSD Program",
+    },
+  },
+];
+---
+
+<section class="px-edge py-10 lg:py-20 bg-bg">
+  <div class="max-w-screen-2xl mx-auto text-center">
+    <h2 class="font-oswald font-bold text-6xl text-text-dark">
+      Personal Training in Its Purest Form
+    </h2>
+    <p class="mt-4 max-w-sm mx-auto font-oswald text-lg">
+      Whatever your goal may be TWR Fitness makes it easier than ever to start
+      your fitness journey
+    </p>
+
+    <div class="mt-20 flex justify-between">
+      {
+        services.map((service) => (
+          <div class="max-w-[350px] text-left">
+            <Image
+              class="mx-auto"
+              src={service.img.src}
+              quality={100}
+              alt={service.img.alt}
+            />
+            <p class="mt-8 font-oswald font-bold text-3xl">{service.title}</p>
+            <p class="mt-2">{service.text}</p>
+            <a
+              href={service.link.to}
+              class="mt-4 inline-block text-primary-lighter text-lg font-bold"
+            >
+              {service.link.text}
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
