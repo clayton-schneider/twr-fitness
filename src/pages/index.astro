@@ -1,5 +1,10 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+
+// Images
+import heroImg from "@imgs/hero-bg.png";
+import heroCover from "@imgs/covers/hero-cover.png";
 ---
 
 <Layout
@@ -8,9 +13,37 @@ import Layout from "../layouts/Layout.astro";
     description: "The starter template for all Simply Sprout websites.",
   }}
 >
-  <section class="px-edge py-10 lg:py-20">
-    <div class="max-w-screen-xl mx-auto">
-      <h1>Hi</h1>
+  <section class="px-edge py-10 lg:py-20 mb-10 relative min-h-[1000px]">
+    <Image
+      class="absolute inset-0 h-full object-cover"
+      quality={100}
+      src={heroImg}
+      alt="woman smiling in athletic clothes"
+    />
+    <Image
+      class="absolute left-0 bottom-0 right-0"
+      src={heroCover}
+      alt="decorative wave cover"
+    />
+    <div class="max-w-screen-2xl mx-auto relative z-10">
+      <div class="mt-52 max-w-[590px]">
+        <h1 class="font-medium text-2xl text-white">
+          Needham’s Premier Private Fitness Studio
+        </h1>
+        <h2 class="font-bold text-5xl text-white">
+          Do You Want a Body That Is Happier, Healthier, and Full of Energy?
+        </h2>
+        <p class="mt-5 text-white text-lg">
+          Getting a healthy body is hard, here at TWR Fitness we make it easy,
+          regardless of your goals. Receive your FREE custom plan to a healthier
+          body below.
+        </p>
+        <a
+          href="/"
+          class="mt-7 bg-accent py-5 px-6 rounded text-white font-bold inline-block"
+          >Start Your Fitness Journey For Free</a
+        >
+      </div>
     </div>
   </section>
 </Layout>
