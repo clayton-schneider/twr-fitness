@@ -11,12 +11,15 @@ const roadblocks = [
 ];
 ---
 
-<section class="bg-primary-dark px-edge py-10 lg:py-20 relative min-h-[1000px]">
+<section
+  class="bg-primary-dark px-edge py-10 lg:py-20 relative lg:min-h-[1000px]"
+>
   <Image
-    class="absolute inset-0 h-full object-cover"
+    class="absolute inset-0 h-full object-cover object-right"
     src={roadblocksImg}
     alt="a peek into the twr studio"
   />
+  <div class="xl:hidden w-full h-full bg-black/50 absolute inset-0"></div>
   <Image
     class="absolute left-0 top-0 right-0"
     quality={100}
@@ -24,25 +27,22 @@ const roadblocks = [
     alt="cover"
   />
   <div class="mt-20 max-w-screen-2xl mx-auto relative z-10">
-    <div class="flex gap-10">
-      <div class="max-w-xl">
-        <h2 class="max-w-lg font-oswald font-bold text-6xl text-white">
-          Fitness Doesn't Need to be Difficult
-        </h2>
-        <p class="mt-5 text-white text-lg">
-          When you have a custom plan designed for your specific needs and
-          weekly accountability you will go from:
-        </p>
-        <ul class="mt-4 list-disc pl-5 font-bold text-white text-xl space-y-4">
-          {roadblocks.map((roadblock) => <li class="text">{roadblock}</li>)}
-        </ul>
-      </div>
+    <div class="max-w-2xl lg:max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
+      <h2 class="lg:max-w-lg font-oswald font-bold text-6xl text-white">
+        Fitness Doesn't Need to be Difficult
+      </h2>
+      <p class="mt-5 text-white text-lg">
+        When you have a custom plan designed for your specific needs and weekly
+        accountability you will go from:
+      </p>
+      <ul class="mt-4 list-disc pl-5 font-bold text-white text-xl space-y-4">
+        {roadblocks.map((roadblock) => <li class="text">{roadblock}</li>)}
+      </ul>
+      <a
+        href="/"
+        class="mt-7 bg-accent py-5 px-6 rounded text-white font-bold inline-block"
+        >Start Your Fitness Journey For Free</a
+      >
     </div>
-
-    <a
-      href="/"
-      class="mt-7 bg-accent py-5 px-6 rounded text-white font-bold inline-block"
-      >Start Your Fitness Journey For Free</a
-    >
   </div>
 </section>

@@ -13,12 +13,14 @@ import ctaImage from "~/assets/twr-fitness-cta.png";
   />
 
   <div
-    class="mt-20 max-w-screen-2xl mx-auto relative z-10 flex items-center justify-between"
+    class="mt-20 max-w-screen-2xl mx-auto relative z-10 flex gap-10 flex-col xl:flex-row items-center justify-between"
   >
-    <div class="flex gap-10">
+    <div class="flex gap-10 flex-col xl:flex-row items-center">
       <Image src={ctaImage} alt="twr fitness clients in action" />
-      <div class="">
-        <h2 class="max-w-md font-oswald font-bold text-6xl text-white">
+      <div class="text-center xl:text-left">
+        <h2
+          class="max-w-md mx-auto xl:mx-0 font-oswald font-bold text-6xl text-white"
+        >
           Make <span class="text-primary-lighter">Today</span> the Day for Change!
         </h2>
         <p class="mt-5 max-w-xl text-white text-lg">
@@ -31,8 +33,8 @@ import ctaImage from "~/assets/twr-fitness-cta.png";
     </div>
 
     <a
-      href="/"
-      class="mt-7 bg-accent py-5 px-6 rounded text-white font-bold inline-block"
+      href="/your-fitness-journey"
+      class="flex-shrink-0 bg-accent py-5 px-6 rounded text-white font-bold inline-block"
       >Start Your Fitness Journey For Free</a
     >
   </div>

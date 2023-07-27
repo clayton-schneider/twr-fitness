@@ -22,7 +22,7 @@ const NavMenu = ({ links }: Props) => {
     <div>
       <ul
         className={
-          "absolute top-[100px] z-50 flex w-full flex-col items-start gap-6 bg-white font-bebas py-5 px-4 text-xl transition-all duration-300 xl:static xl:w-auto xl:flex-row xl:items-center xl:bg-transparent xl:py-0 xl:px-0 " +
+          "absolute top-[132px] z-50 flex w-full flex-col items-start gap-6 bg-bg font-bebas py-5 px-4 text-xl transition-all duration-300 xl:static xl:w-auto xl:flex-row xl:items-center xl:bg-transparent xl:py-0 xl:px-0 " +
           (isOpen ? "left-0 z-40 shadow shadow-neutral-200" : "-left-full")
         }
       >
@@ -53,10 +53,10 @@ const NavMenu = ({ links }: Props) => {
             );
           }
         })}
-        <li>
+        <li className="block w-full">
           <a
-            href=""
-            className="!block py-5 px-6 font-bold text-xl bg-accent rounded text-white w-full text-center lg:text-left lg:w-auto"
+            href="/your-fitness-journey"
+            className="w-full lg:w-auto inline-block  py-5 px-6 font-bold text-xl bg-accent rounded text-white  text-center lg:text-left "
           >
             Start Your Fitness Journey
           </a>

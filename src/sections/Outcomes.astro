@@ -13,20 +13,21 @@ const outcomes = [
 ];
 ---
 
-<section class="px-edge py-10 lg:py-20 relative min-h-[1000px]">
+<section class="px-edge py-10 lg:py-20 relative lg:min-h-[1000px]">
   <Image
-    class="absolute inset-0 h-full object-cover"
+    class="absolute inset-0 h-full object-cover object-right"
     quality={100}
     src={outcomeImg}
-    alt="woman smiling in athletic clothes"
+    alt="man happy to be working out"
   />
+  <div class="xl:hidden w-full h-full bg-black/50 absolute inset-0"></div>
 
   <div class="max-w-screen-2xl mx-auto relative z-10">
-    <div class="mt-52 max-w-2xl">
+    <div class="lg:mt-52 max-w-2xl mx-auto lg:mx-0 text-center lg:text-left">
       <h2 class="mt-2 font-oswald font-bold text-5xl text-white">
         Everyone Loves Fitness... They Just Don't Know it Yet!
       </h2>
-      <p class="mt-5 text-accent text-lg">
+      <p class="mt-5 font-bold text-accent text-lg">
         Something magical happens when you have a fitness plan developed
         specifically for you, you won’t want to stop. Choose from one of the
         many reasons below.

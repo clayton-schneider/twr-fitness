@@ -55,10 +55,12 @@ const services = [
       your fitness journey
     </p>
 
-    <div class="mt-20 flex justify-between">
+    <div
+      class="mt-10 lg:mt-20 flex gap-10 flex-col lg:flex-row items-center justify-between"
+    >
       {
         services.map((service) => (
-          <div class="max-w-[350px] text-left">
+          <div class="max-w-[350px] text-center lg:text-left">
             <Image
               class="mx-auto"
               src={service.img.src}
