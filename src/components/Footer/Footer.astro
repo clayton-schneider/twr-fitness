@@ -1,40 +1,50 @@
 ---
-import { socials } from "@data/general";
-import { hours } from "@data/general";
-import { contacts } from "@data/general";
+import { Image } from "astro:assets";
+import { socials, hours, quickLinks, contacts } from "@data/general";
 import { Icon } from "astro-icon";
+
+import logo from "~/assets/twr-logo-text-white.png";
+
+const date = new Date();
 ---
 
-<section class="py-10 px-edge">
+<section class="pt-10 px-edge bg-primary-darker text-white">
   <footer>
     <div
       class="mx-auto flex flex-col text-center lg:text-left gap-10 items-center lg:flex-row lg:items-start max-w-screen-2xl justify-between"
     >
       <div class="max-w-sm mx-auto lg:mx-0">
-        <Icon name="logo" width="158" height="60" class="mx-auto lg:mx-0" />
-        <p class="mt-2 text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum non ab
-          exercitationem veritatis, labore nobis ipsa officiis magnam sequi,
-          iusto asperiores.
+        <Image src={logo} alt="twr fitness logo" height={150} />
+        <p class="mt-8">
+          TWR Fitness is a small, privately owned training facility. It’s just
+          me an my clients who, as we work to build a relationship as
+          trainer-client, feel like they are working with a friend who knows
+          them, cares about them, and provides a level of service only available
+          in a setting like this.
         </p>
-        <div class="mt-6 flex justify-center lg:justify-start space-x-2">
+      </div>
+      <div>
+        <p class="font-oswald font-bold text-lg">Quick Links</p>
+        <ul class="mt-4 space-y-2">
           {
-            socials.map((social) => (
-              <a href={social.link}>
-                <Icon name={social.icon} size={30} color="black" />
-              </a>
+            quickLinks.map((link) => (
+              <li>
+                <a class="font-light text-lg" href={link.to}>
+                  {link.text}
+                </a>
+              </li>
             ))
           }
-        </div>
+        </ul>
       </div>
 
       <div>
-        <p class="font-bold text-lg">Our Hours</p>
-        <ul class="mt-2">
+        <p class="font-oswald font-bold text-lg">Our Hours</p>
+        <ul class="mt-4 space-y-2">
           {
             hours.map((hour) => (
               <li>
-                <p>
+                <p class="font-light text-lg">
                   {hour.day}: {hour.open}-{hour.close}
                 </p>
               </li>
@@ -44,25 +54,33 @@ import { Icon } from "astro-icon";
       </div>
 
       <div>
-        <p class="font-bold text-lg">Contact Us</p>
-        <ul class="mt-2">
+        <p class="font-oswald font-bold text-lg">Contact Us</p>
+        <ul class="mt-4 space-y-4">
           {
             contacts.map((contact) => (
               <li class="flex space-x-2 justify-center lg:justify-start">
                 <Icon name={contact.icon} size={30} />
-                <p>{contact.text}</p>
+                <p class="text-lg font-light">{contact.text}</p>
               </li>
             ))
           }
         </ul>
+        <div class="mt-6 flex justify-center lg:justify-start space-x-2">
+          {
+            socials.map((social) => (
+              <a target="_blank" href={social.link}>
+                <Icon name={social.icon} size={30} color="white" />
+              </a>
+            ))
+          }
+        </div>
       </div>
     </div>
   </footer>
-  <div class="bg-primary-darker py-4">
-    <p class="text-center text-xl">
-      Copyright © 2022 Website Name | All Right Reserved | Powered By <a
-        href="https://www.simply-sprout.com">Simply Sprout</a
-      >
+  <div class="mt-4 py-4">
+    <p class="text-center">
+      Copyright © {date.getFullYear()} TWR Fitness | All Right Reserved | Powered
+      By <a href="https://www.simply-sprout.com">Simply Sprout</a>
     </p>
   </div>
 </section>

@@ -23,6 +23,7 @@ module.exports = {
         sans: ["Open Sans", ...FONT_FAMILY_BASE],
       },
       colors: {
+        "primary-darker": "#1D323F",
         primary: "#271BF7",
         "primary-lighter": "#078FE0",
         accent: "#F6AE2D",
