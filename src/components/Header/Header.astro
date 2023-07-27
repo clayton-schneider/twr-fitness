@@ -1,6 +1,5 @@
 ---
-import { Icon } from "astro-icon";
-// Import components
+import { Image } from "astro:assets";
 import NavMenu from "./NavMenu";
 const links = [
   { linkText: "Home", link: "/" },
@@ -21,11 +20,15 @@ interface Props {
   className?: string;
 }
 const { className } = Astro.props;
+
+import logo from "@imgs/logo.png";
 ---
 
 <header class={(className ? className : "") + " px-edge relative"}>
   <div class="mx-auto flex max-w-screen-2xl items-center justify-between py-4">
-    <a href="/"><Icon name="logo" width="158" height="60" /></a>
+    <a href="/">
+      <Image src={logo} height={100} alt="twr logo" />
+    </a>
 
     <NavMenu links={links} client:load />
   </div>

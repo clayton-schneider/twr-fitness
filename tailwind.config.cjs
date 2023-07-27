@@ -19,7 +19,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#00C24E",
+        primary: "#271BF7",
         "text-light": "#FFFFFF",
         "text-dark": "#000000",
       },
