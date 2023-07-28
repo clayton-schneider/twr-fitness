@@ -1,0 +1,58 @@
+---
+import { Image } from "astro:assets";
+import revolution from "~/assets/pages/about/revolution.png";
+import nasm from "~/assets/pages/about/nasm.png";
+
+const qualifications = [
+  {
+    org: "National Academy of Sports Medicine",
+    name: "Certified Personal Trainer",
+    img: {
+      src: nasm,
+      alt: "National Academy of Sports Medicine logo",
+    },
+  },
+  {
+    org: "New England Revolution",
+    name: "Player Development Coach",
+    img: {
+      src: revolution,
+      alt: "New England Revolution logo",
+    },
+  },
+];
+---
+
+<section class="px-edge py-10 lg:py-20 bg-bg">
+  <div class="max-w-screen-2xl mx-auto text-center">
+    <p class="font-oswald text-2xl">My Qualifications</p>
+    <h2 class="mt-2 font-oswald font-bold text-6xl text-text-dark">
+      Lifelong Learner, Daily Practitioner
+    </h2>
+    <p class="mt-4 max-w-md mx-auto text-lg">
+      When I am not helping my clients with thier fitness goals I am working for
+      the New England Revolution, building future talent
+    </p>
+
+    <div
+      class="mt-10 lg:mt-20 flex gap-10 flex-col lg:flex-row items-center justify-around"
+    >
+      {
+        qualifications.map((qualification) => (
+          <div class="max-w-[350px] text-center">
+            <Image
+              class="mx-auto"
+              src={qualification.img.src}
+              quality={100}
+              alt={qualification.img.alt}
+            />
+            <p class="mt-8 font-oswald font-bold text-3xl">
+              {qualification.org}
+            </p>
+            <p class="mt-2 text-xl">{qualification.name}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
