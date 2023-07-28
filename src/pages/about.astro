@@ -1,5 +1,36 @@
 ---
+import { Image } from "astro:assets";
+import aboutHero from "~/assets/pages/about/about-hero.png";
+import heroCover from "~/assets/covers/hero-cover.png";
+import cover from "~/assets/covers/top-cover.png";
+import valueImg from "~/assets/pages/about/values.png";
+import myStoryImg from "~/assets/pages/about/my-story.png";
+
 import Layout from "../layouts/Layout.astro";
+import CTA from "@sections/CTA.astro";
+
+const values = [
+  {
+    title: "Scientifically Sound",
+    text: "Trust in proven methods. Our decisions are always backed by science to ensure your well-being.",
+  },
+  {
+    title: "Emotional Balance",
+    text: "Fitness isn't just physical. We're here to nurture both your body and soul.",
+  },
+  {
+    title: "Guided Autonomy",
+    text: "We equip you with the tools and insights to make your own health choices.",
+  },
+  {
+    title: "Have Fun",
+    text: "Play hard, train harder. Our playful approach ensures you enjoy every step of your fitness journey.",
+  },
+  {
+    title: "Accountable Action",
+    text: "Success is a habit, not an act. We ensure you stay committed, focused, and consistent.",
+  },
+];
 ---
 
 <Layout
@@ -8,9 +39,136 @@ import Layout from "../layouts/Layout.astro";
     description: "The starter template for all Simply Sprout websites.",
   }}
 >
-  <section class="px-edge py-10 lg:py-20">
-    <div class="max-w-screen-xl mx-auto">
-      <h1>Hi</h1>
+  <section class="px-edge py-10 lg:py-20 relative lg:min-h-[1000px]">
+    <Image
+      class="absolute inset-0 h-full object-cover"
+      quality={100}
+      src={aboutHero}
+      alt="woman smiling in athletic clothes"
+    />
+    <div class="xl:hidden w-full h-full bg-black/50 absolute inset-0"></div>
+    <Image
+      class="absolute left-0 bottom-0 right-0"
+      src={heroCover}
+      alt="decorative wave cover"
+    />
+    <div class="max-w-screen-2xl mx-auto relative z-10">
+      <div
+        class="my-10 lg:mt-52 max-w-[590px] mx-auto lg:mx-0 text-center lg:text-left"
+      >
+        <h1 class="font-oswald font-medium text-2xl text-white">
+          Chasing your potential
+        </h1>
+        <h2 class="mt-2 font-oswald font-bold text-5xl text-white">
+          Empowering All Through Fitness Education
+        </h2>
+        <p class="mt-5 text-white text-lg">
+          TWR Fitness is a small, privately owned training facility. It’s just
+          me and my clients who, as we work to build a relationship as
+          trainer-client, feel like they are working with a friend who knows
+          them, cares about them, and provides a level of service only available
+          in a setting like this.
+        </p>
+        <a
+          href="/your-fitness-journey"
+          class="mt-7 bg-accent py-5 px-6 rounded text-white font-bold inline-block"
+          >Start Your Fitness Journey For Free</a
+        >
+      </div>
     </div>
   </section>
+
+  <section class="bg-bg px-edge py-10 lg:py-20 relative">
+    <Image
+      class="absolute left-0 top-0 right-0"
+      quality={100}
+      src={cover}
+      alt="cover"
+    />
+
+    <div
+      class="max-w-screen-2xl mx-auto relative z-10 flex gap-10 flex-col lg:flex-row items-center justify-between"
+    >
+      <div class="max-w-xl text-center lg:text-left">
+        <p class="font-oswald text-2xl">The Heartbeat of TWR Fitness</p>
+        <h2 class="mt-2 font-oswald font-bold text-4xl text-text-dark">
+          Values that <span class="text-primary-lighter">Drive Us</span>
+          and <span class="text-primary-lighter">Inspire You!</span>
+        </h2>
+        <ul class="mt-5 text-lg space-y-4">
+          {
+            values.map((value) => (
+              <li>
+                <span class="font-bold">{value.title}: </span>
+                {value.text}
+              </li>
+            ))
+          }
+        </ul>
+        <a
+          href="/"
+          class="mt-7 bg-accent py-5 px-6 rounded text-white font-bold inline-block"
+          >Start Your Fitness Journey For Free</a
+        >
+      </div><Image src={valueImg} alt="twr fitness values" />
+    </div>
+  </section>
+
+  <section class="px-edge py-10 lg:py-20 relative xl:min-h-[1000px]">
+    <Image
+      class="absolute inset-0 h-full object-cover object-left xl:object-center"
+      quality={100}
+      src={myStoryImg}
+      alt="tristain of twr fitness"
+    />
+    <div class="xl:hidden w-full h-full bg-black/60 absolute inset-0"></div>
+
+    <div
+      class="max-w-screen-2xl mx-auto flex justify-center xl:justify-end relative z-10"
+    >
+      <div
+        class="xl:mt-52 max-w-xl mx-auto lg:mx-0 text-white text-center xl:text-right"
+      >
+        <p class="font-oswald text-2xl">Leading from Experience</p>
+        <h2 class="mt-2 font-oswald font-bold text-5xl">
+          I've Been Down Your Path Before
+        </h2>
+        <div class="mt-5 space-y-3 text-lg">
+          <p>
+            If you are considering whether personal training is worth your time,
+            energy, and effort then odds are you want more. Maybe you are
+            unhappy with the way an injury makes you feel, or perhaps you just
+            want to not feel out of breath when you climb the stairs.
+          </p>
+          <p class="font-bold italic">I've been there...</p>
+          <p>
+            In [INSERT YEAR] I was diagnosed with Lyme Disease. Traditional
+            medicine failed me. I felt what it was like to give up. That is
+            until I worked with a personal trainer who helped turn my life
+            around. Today I am happier than ever. <span class="font-bold italic"
+              >But this story isn’t about me.</span
+            >
+          </p>
+          <p>
+            It’s about how I have been in your shoes. How I have learned the key
+            factors that can help you reach your goals. <span
+              class="font-bold italic"
+              >So if you are ready to take that jump then click the button
+              below.</span
+            >
+          </p>
+        </div>
+
+        <ul class="mt-4 list-disc list-inside font-bold text-white text-xl">
+        </ul>
+        <a
+          href="/"
+          class="mt-7 bg-accent py-5 px-6 rounded text-white font-bold inline-block"
+          >Start Your Fitness Journey For Free</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <CTA />
 </Layout>
