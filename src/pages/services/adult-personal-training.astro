@@ -1,16 +1,25 @@
 ---
+import { Image } from "astro:assets";
+
 import Layout from "src/layouts/Layout.astro";
+import CTA from "@sections/CTA.astro";
+import APTHero from "@sections/services/apt/APTHero.astro";
+import Qualifications from "@sections/about/Qualifications.astro";
+import Outcomes from "@sections/Outcomes.astro";
+import Roadblocks from "@sections/Roadblocks.astro";
+import WhyUs from "@sections/WhyUs.astro";
 ---
 
 <Layout
   seo={{
-    title: "Our Services | Simply Sprout Starter",
+    title: "Adult Personal Training | Simply Sprout Starter",
     description: "The starter template for all Simply Sprout websites.",
   }}
 >
-  <section class="px-edge py-10 lg:py-20">
-    <div class="max-w-screen-xl mx-auto">
-      <h1>Hi</h1>
-    </div>
-  </section>
+  <APTHero />
+  <WhyUs />
+  <Outcomes />
+  <Roadblocks />
+  <Qualifications />
+  <CTA />
 </Layout>
