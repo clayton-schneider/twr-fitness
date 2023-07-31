@@ -1,4 +1,8 @@
 ---
+import { Image } from "astro:assets";
+import serviceHero from "~/assets/pages/services/services-hero.png";
+import heroCover from "~/assets/covers/hero-cover.png";
+
 import CTA from "@sections/CTA.astro";
 import Services from "@sections/Services.astro";
 import Layout from "src/layouts/Layout.astro";
@@ -10,9 +14,40 @@ import Layout from "src/layouts/Layout.astro";
     description: "The starter template for all Simply Sprout websites.",
   }}
 >
-  <section class="px-edge py-10 lg:py-20">
-    <div class="max-w-screen-xl mx-auto">
-      <h1>Hi</h1>
+  <section class="px-edge py-10 lg:py-20 relative lg:min-h-[1000px]">
+    <Image
+      class="absolute inset-0 h-full object-cover"
+      quality={100}
+      src={serviceHero}
+      alt="woman smiling in athletic clothes"
+    />
+    <div class="xl:hidden w-full h-full bg-black/50 absolute inset-0"></div>
+    <Image
+      class="absolute left-0 bottom-0 right-0"
+      src={heroCover}
+      alt="decorative wave cover"
+    />
+    <div class="max-w-screen-2xl mx-auto relative z-10">
+      <div
+        class="my-10 lg:mt-52 max-w-[590px] mx-auto lg:mx-0 text-center lg:text-left"
+      >
+        <h1 class="font-oswald font-medium text-2xl text-white">
+          TWR Fitness Services
+        </h1>
+        <h2 class="mt-2 font-oswald font-bold text-5xl text-white">
+          Personal Training Custom to Your Goals
+        </h2>
+        <p class="mt-5 text-white text-lg">
+          TWR Fitness offers personal training to youths and adults alike.
+          Whether you are looking to improve your athletic capability, lose some
+          weight, or recover from an injury, I have a plan to get you there.
+        </p>
+        <a
+          href="/your-fitness-journey"
+          class="mt-7 bg-accent py-5 px-6 rounded text-white font-bold inline-block"
+          >Start Your Fitness Journey For Free</a
+        >
+      </div>
     </div>
   </section>
   <Services />

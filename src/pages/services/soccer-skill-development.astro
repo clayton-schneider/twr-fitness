@@ -1,16 +1,107 @@
 ---
+import { Image } from "astro:assets";
+import ssdHero from "~/assets/pages/services/ssd/ssd-hero.png";
+import heroCover from "~/assets/covers/hero-cover.png";
+import ssdOutcomes from "~/assets/pages/services/ssd/ssd-outcomes.png";
+
 import Layout from "src/layouts/Layout.astro";
+import WhySSD from "@sections/services/ssd/WhySSD.astro";
+import Qualifications from "@sections/about/Qualifications.astro";
+import CTA from "@sections/CTA.astro";
+
+const outcomes = [
+  {
+    title: "Winning Mindset",
+    text: "We foster a winning mindset that instills determination, resilience, and mental toughness.",
+  },
+  {
+    title: "Varsity Playing Time",
+    text: "If you're determined to earn your place on the varsity team, our personalized coaching will help you showcase your abilities, increase your playing time, and become an essential player in every match.",
+  },
+  {
+    title: "Continued Play After High School",
+    text: "Dreaming of a soccer future beyond high school? We're here to guide you on that journey.",
+  },
+  {
+    title: "Improved Soccer Skills",
+    text: "Whether you're a beginner or an experienced player, we will fine-tune your soccer skills. From ball control to precision passing, expect a noticeable improvement in all aspects of your game.",
+  },
+];
 ---
 
 <Layout
   seo={{
-    title: "Our Services | Simply Sprout Starter",
+    title: "Soccer Skill Development | Simply Sprout Starter",
     description: "The starter template for all Simply Sprout websites.",
   }}
 >
-  <section class="px-edge py-10 lg:py-20">
-    <div class="max-w-screen-xl mx-auto">
-      <h1>Hi</h1>
+  <section class="px-edge py-10 lg:py-20 relative lg:min-h-[1000px]">
+    <Image
+      class="absolute inset-0 h-full object-cover"
+      quality={100}
+      src={ssdHero}
+      alt="woman smiling in athletic clothes"
+    />
+    <div class="xl:hidden w-full h-full bg-black/50 absolute inset-0"></div>
+    <Image
+      class="absolute left-0 bottom-0 right-0"
+      src={heroCover}
+      alt="decorative wave cover"
+    />
+    <div class="max-w-screen-2xl mx-auto relative z-10">
+      <div
+        class="my-10 lg:mt-52 max-w-[590px] mx-auto lg:mx-0 text-center lg:text-left"
+      >
+        <h1 class="font-oswald font-medium text-2xl text-white">
+          Soccer Skill Development
+        </h1>
+        <h2 class="mt-2 font-oswald font-bold text-5xl text-white">
+          Personal Skill Development and Coaching for Elite Soccer Players
+        </h2>
+        <p class="mt-5 text-white text-lg">
+          The fastest way to grow your soccer skills is with a personalized plan
+          designed specifically to help strengthen your weakest parts of the
+          game. Click the button below to get your custom plan.
+        </p>
+        <a
+          href="/your-fitness-journey"
+          class="mt-7 bg-accent py-5 px-6 rounded text-white font-bold inline-block"
+          >Start Your Soccer Journey For Free</a
+        >
+      </div>
     </div>
   </section>
+  <section class="bg-bg px-edge py-10 lg:py-20 relative">
+    <div
+      class="max-w-screen-2xl mx-auto relative z-10 flex gap-10 flex-col lg:flex-row items-center justify-between"
+    >
+      <div class="max-w-xl text-center lg:text-left">
+        <p class="font-oswald text-2xl">Who Is This For?</p>
+        <h2 class="mt-2 font-oswald font-bold text-4xl text-text-dark">
+          Take Your Soccer Skills to <span class="text-primary-lighter"
+            >New Heights!</span
+          >
+        </h2>
+        <ul class="mt-5 text-lg space-y-4">
+          {
+            outcomes.map((outcome) => (
+              <li>
+                <span class="font-bold">{outcome.title}: </span>
+                {outcome.text}
+              </li>
+            ))
+          }
+        </ul>
+        <a
+          href="/"
+          class="mt-7 bg-accent py-5 px-6 rounded text-white font-bold inline-block"
+          >Start Your Soccer Journey For Free</a
+        >
+      </div><Image src={ssdOutcomes} alt="twr fitness soccer team success" />
+    </div>
+  </section>
+
+  <WhySSD />
+  <Qualifications />
+  <CTA />
 </Layout>

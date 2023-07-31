@@ -1,0 +1,63 @@
+---
+import { Image } from "astro:assets";
+import whySSD from "~/assets/pages/services/ssd/why-ssd.png";
+
+const reasons = [
+  {
+    title: "Skills Assessment",
+    text: "To determine which skills should be prioritized",
+  },
+  {
+    title: "Proper Nutrition",
+    text: "So you have enough energy on the field.",
+  },
+  {
+    title: "Training Routine",
+    text: "That goes beyond “just” soccer skills and strengthens you as an athlete",
+  },
+  {
+    title: "Recovery Protocols",
+    text: "To make sure you get the most for your efforts and reduce the chance for injury.",
+  },
+];
+---
+
+<section class="px-edge py-10 lg:py-20 relative xl:min-h-[1000px]">
+  <Image
+    class="absolute inset-0 h-full object-cover object-left xl:object-center"
+    quality={100}
+    src={whySSD}
+    alt="juggling a soccer ball"
+  />
+  <div class="xl:hidden w-full h-full bg-black/60 absolute inset-0"></div>
+
+  <div
+    class="max-w-screen-2xl mx-auto flex justify-center xl:justify-end relative z-10"
+  >
+    <div
+      class="xl:mt-52 max-w-xl mx-auto lg:mx-0 text-white text-center xl:text-right"
+    >
+      <p class="font-oswald text-2xl">How it Works</p>
+      <h2 class="mt-2 font-oswald font-bold text-5xl">
+        A Soccer Development Plan Custom to You
+      </h2>
+      <ul class="mt-5 text-lg space-y-4">
+        {
+          reasons.map((reason) => (
+            <li>
+              <span class="font-bold">{reason.title}: </span>
+              {reason.text}
+            </li>
+          ))
+        }
+      </ul>
+
+      <ul class="mt-4 list-disc list-inside font-bold text-white text-xl"></ul>
+      <a
+        href="/"
+        class="mt-7 bg-accent py-5 px-6 rounded text-white font-bold inline-block"
+        >Start Your Soccer Journey For Free</a
+      >
+    </div>
+  </div>
+</section>
