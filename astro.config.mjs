@@ -1,14 +1,21 @@
 import { defineConfig, sharpImageService } from "astro/config";
 
-// https://astro.build/config
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 import react from "@astrojs/react";
 
 // https://astro.build/config
+import sitemap from "@astrojs/sitemap";
+
+// https://astro.build/config
 export default defineConfig({
-  experimental: { assets: true },
+  build: {
+    format: "file",
+  },
+  experimental: {
+    assets: true,
+  },
   site: "https://twrfitness.net",
   image: {
     service: sharpImageService(),
@@ -20,5 +27,6 @@ export default defineConfig({
       },
     }),
     react(),
+    sitemap(),
   ],
 });
