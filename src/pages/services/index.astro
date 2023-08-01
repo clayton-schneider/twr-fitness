@@ -10,20 +10,23 @@ import Layout from "src/layouts/Layout.astro";
 
 <Layout
   seo={{
-    title: "Our Services | Simply Sprout Starter",
-    description: "The starter template for all Simply Sprout websites.",
+    title: "Our Services | TWR Fitness",
+    description:
+      "TWR Fitness offers personal training for adults and youths, as well as soccer development skill coaching. The studio is based out of Needham Massachusetts.",
   }}
 >
   <section class="px-edge py-10 lg:py-20 relative lg:min-h-[1000px]">
     <Image
       class="absolute inset-0 h-full object-cover"
       quality={100}
+      loading="eager"
       src={serviceHero}
-      alt="woman smiling in athletic clothes"
+      alt="TWR Fitness studio"
     />
     <div class="xl:hidden w-full h-full bg-black/50 absolute inset-0"></div>
     <Image
       class="absolute left-0 bottom-0 right-0"
+      loading="eager"
       src={heroCover}
       alt="decorative wave cover"
     />
