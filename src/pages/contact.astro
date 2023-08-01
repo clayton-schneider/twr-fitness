@@ -19,7 +19,8 @@ import { Icon } from "astro-icon";
 <Layout
   seo={{
     title: "Contact | TWR Fitness",
-    description: "The starter template for all Simply Sprout websites.",
+    description:
+      "Have a question about the services I offer here at TWR Fitness? Feel free to reach out and I will be in contact with you shortly.",
   }}
 >
   <section
@@ -29,7 +30,7 @@ import { Icon } from "astro-icon";
       class="absolute inset-0 h-full object-cover object-right lg:object-center"
       quality={100}
       src={contactHero}
-      alt="woman smiling in athletic clothes"
+      alt="fitness gear"
     />
     <Image
       class="absolute left-0 bottom-0 right-0"
@@ -78,7 +79,11 @@ import { Icon } from "astro-icon";
           <ul class="flex justify-end gap-2">
             {
               socials.map((social) => (
-                <a href={social.link} target="_blank">
+                <a
+                  href={social.link}
+                  target="_blank"
+                  aria-label={`social link to: ${social.name}`}
+                >
                   <Icon name={social.icon} size={30} class="text-primary" />
                 </a>
               ))
