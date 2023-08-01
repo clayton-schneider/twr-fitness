@@ -138,7 +138,7 @@ const ContactForm = ({
       ))}
 
       {(formState === "ready" || formState === "empty") && (
-        <button className="col-span-full rounded border-2 border-transparent bg-primary py-6 px-7 text-center leading-none text-white transition-all duration-300 hover:border-primary hover:bg-transparent hover:text-primary">
+        <button className="col-span-full rounded border-2 border-transparent bg-primary py-6 px-7 text-center leading-none text-white">
           {button}
         </button>
       )}

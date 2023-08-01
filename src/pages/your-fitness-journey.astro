@@ -1,0 +1,56 @@
+---
+import Layout from "src/layouts/Layout.astro";
+
+import ContactForm from "@components/Forms/ContactForm";
+const fields = [
+  { fieldType: "text", id: "first", name: "First Name" },
+  { fieldType: "text", id: "last", name: "Last Name" },
+  { fieldType: "email", id: "email", name: "Email Address" },
+
+  { fieldType: "text", id: "number", name: "Phone Number" },
+  { fieldType: "text", id: "age", name: "Age" },
+  {
+    fieldType: "textarea",
+    id: "goals",
+    name: "What are your fitness and health goals?",
+  },
+];
+---
+
+<Layout
+  seo={{
+    title: "Your Fitness Journey | TWR Fitness",
+    description: "description herer",
+  }}
+>
+  <section class="px-edge py-10 lg:py-20 bg-bg">
+    <div
+      class="max-w-screen-2xl mx-auto flex gap-10 flex-col lg:flex-row items-center lg:items-start justify-between"
+    >
+      <div class="text-text-dark max-w-2xl text-center lg:text-left">
+        <h1 class="font-oswald font-medium text-5xl">
+          Today Is the Day For Change
+        </h1>
+        <h2 class="mt-2 font-bold text-2xl text-primary-lighter">
+          Your Free Custom Fitness Plan Is Waiting For You!
+        </h2>
+        <p class="mt-4 leading-relaxed text-lg">
+          Fill out the form to the right to start your fitness journey. I will
+          contact you shortly to set up a time to learn more about your goals,
+          complete a diagnosis of your current phsyical wellness, and put
+          together a custom plan to help you reach your goals. Spots are limited
+          so act fast!
+        </p>
+      </div>
+      <div class="flex-grow flex-shrink-0 max-w-2xl w-full">
+        <ContactForm
+          client:load
+          name="TWR Fitness Start Your Fitness Journey Form"
+          message="Thank you for submitting this contact form. We will reach out to you shortly."
+          error="There was an error submitting this form. Please refresh and try again. If the problem persists, please send us an email directly."
+          fields={fields}
+        />
+      </div>
+    </div>
+  </section>
+</Layout>
