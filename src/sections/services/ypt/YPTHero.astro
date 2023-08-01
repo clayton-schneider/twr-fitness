@@ -6,14 +6,16 @@ import heroCover from "~/assets/covers/hero-cover.png";
 
 <section class="px-edge py-10 lg:py-20 relative lg:min-h-[1000px]">
   <Image
-    class="absolute inset-0 h-full object-cover"
+    class="absolute inset-0 h-full object-cover object-right xl:object-center"
     quality={100}
+    loading="eager"
     src={YptHero}
-    alt="woman smiling in athletic clothes"
+    alt="client performing strength exercises"
   />
   <div class="xl:hidden w-full h-full bg-black/50 absolute inset-0"></div>
   <Image
     class="absolute left-0 bottom-0 right-0"
+    loading="eager"
     src={heroCover}
     alt="decorative wave cover"
   />
