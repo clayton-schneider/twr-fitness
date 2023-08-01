@@ -102,7 +102,7 @@ const ContactForm = ({
   return (
     <form
       onSubmit={(e) => handleSubmit(e)}
-      className="flex-grow shrink-0 min-w-[400px] grid w-full grid-cols-1 gap-4"
+      className="flex-grow shrink-0 xl:min-w-[400px] grid w-full grid-cols-1 gap-4"
     >
       {fields.map((field, key) => (
         <div
