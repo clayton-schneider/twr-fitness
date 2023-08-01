@@ -36,20 +36,23 @@ const values = [
 
 <Layout
   seo={{
-    title: "About Us | Simply Sprout Starter",
-    description: "The starter template for all Simply Sprout websites.",
+    title: "About Us | TWR Fitness",
+    description:
+      "TWR Fitness is a privately owned training facility in Needham, Massachusetts. I offer personal training for adults, youths, and soccer players.",
   }}
 >
   <section class="px-edge py-10 lg:py-20 relative lg:min-h-[1000px]">
     <Image
       class="absolute inset-0 h-full object-cover"
       quality={100}
+      loading="eager"
       src={aboutHero}
-      alt="woman smiling in athletic clothes"
+      alt="man running"
     />
     <div class="xl:hidden w-full h-full bg-black/50 absolute inset-0"></div>
     <Image
       class="absolute left-0 bottom-0 right-0"
+      loading="eager"
       src={heroCover}
       alt="decorative wave cover"
     />
@@ -58,7 +61,7 @@ const values = [
         class="my-10 lg:mt-52 max-w-[590px] mx-auto lg:mx-0 text-center lg:text-left"
       >
         <h1 class="font-oswald font-medium text-2xl text-white">
-          Chasing your potential
+          Chasing Your Potential
         </h1>
         <h2 class="mt-2 font-oswald font-bold text-5xl text-white">
           Empowering All Through Fitness Education
@@ -107,7 +110,7 @@ const values = [
           }
         </ul>
         <a
-          href="/"
+          href="/your-fitness-journey"
           class="mt-7 bg-accent py-5 px-6 rounded text-white font-bold inline-block"
           >Start Your Fitness Journey For Free</a
         >
@@ -163,7 +166,7 @@ const values = [
         <ul class="mt-4 list-disc list-inside font-bold text-white text-xl">
         </ul>
         <a
-          href="/"
+          href="/your-fitness-journey"
           class="mt-7 bg-accent py-5 px-6 rounded text-white font-bold inline-block"
           >Start Your Fitness Journey For Free</a
         >
