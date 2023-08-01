@@ -1,16 +1,21 @@
 ---
 import Layout from "src/layouts/Layout.astro";
+import YPTHero from "@sections/services/ypt/YPTHero.astro";
+import WhyUs from "@sections/WhyUs.astro";
+import YPTOutcomes from "@sections/services/ypt/YPTOutcomes.astro";
+import Qualifications from "@sections/about/Qualifications.astro";
+import CTA from "@sections/CTA.astro";
 ---
 
 <Layout
   seo={{
-    title: "Our Services | Simply Sprout Starter",
+    title: "Youth Personal Training| Simply Sprout Starter",
     description: "The starter template for all Simply Sprout websites.",
   }}
 >
-  <section class="px-edge py-10 lg:py-20">
-    <div class="max-w-screen-xl mx-auto">
-      <h1>Hi</h1>
-    </div>
-  </section>
+  <YPTHero />
+  <WhyUs />
+  <YPTOutcomes />
+  <Qualifications />
+  <CTA />
 </Layout>

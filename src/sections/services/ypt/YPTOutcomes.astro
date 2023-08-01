@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+
+import outcomeImg from "~/assets/pages/services/ypt/ypt-outcomes.png";
+
+const outcomes = [
+  "Improve athleticism",
+  "Build strength",
+  "Recover from injuries",
+  "Prevent future injuries",
+  "Compete at the varsity or post high-school level",
+];
+---
+
+<section class="px-edge py-10 lg:py-20 relative lg:min-h-[1000px]">
+  <Image
+    class="absolute inset-0 h-full object-cover object-right"
+    quality={100}
+    src={outcomeImg}
+    alt="man happy to be working out"
+  />
+  <div class="xl:hidden w-full h-full bg-black/50 absolute inset-0"></div>
+
+  <div class="max-w-screen-2xl mx-auto relative z-10">
+    <div class="lg:mt-52 max-w-2xl mx-auto lg:mx-0 text-center lg:text-left">
+      <h2 class="mt-2 font-oswald font-bold text-5xl text-white">
+        Individualized and Corrective Fitness Training To Help You Reach Your
+        Goals
+      </h2>
+      <p class="mt-5 font-bold text-accent text-lg">
+        Youth personal training allows for you to live a healthier and
+        competitive life. I help people just like you prepare and compete at the
+        top of thier capabilities.
+      </p>
+      <ul class="mt-4 list-disc list-inside font-bold text-white text-xl">
+        {outcomes.map((outcome) => <li class="text">{outcome}</li>)}
+      </ul>
+      <a
+        href="/"
+        class="mt-7 bg-accent py-5 px-6 rounded text-white font-bold inline-block"
+        >Start Your Fitness Journey For Free</a
+      >
+    </div>
+  </div>
+</section>
