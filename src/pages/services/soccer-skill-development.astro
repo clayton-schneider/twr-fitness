@@ -31,20 +31,23 @@ const outcomes = [
 
 <Layout
   seo={{
-    title: "Soccer Skill Development | Simply Sprout Starter",
-    description: "The starter template for all Simply Sprout websites.",
+    title: "Soccer Skill Development | TWR Fitness",
+    description:
+      "Improve your soccer skills so that you can compete at the highest level. TWR Fitness will build a program that makes you a more confident soccer player.",
   }}
 >
   <section class="px-edge py-10 lg:py-20 relative lg:min-h-[1000px]">
     <Image
       class="absolute inset-0 h-full object-cover"
       quality={100}
+      loading="eager"
       src={ssdHero}
-      alt="woman smiling in athletic clothes"
+      alt="soccer player kicking a ball"
     />
     <div class="xl:hidden w-full h-full bg-black/50 absolute inset-0"></div>
     <Image
       class="absolute left-0 bottom-0 right-0"
+      loading="eager"
       src={heroCover}
       alt="decorative wave cover"
     />
@@ -93,7 +96,7 @@ const outcomes = [
           }
         </ul>
         <a
-          href="/"
+          href="/your-fitness-journey"
           class="mt-7 bg-accent py-5 px-6 rounded text-white font-bold inline-block"
           >Start Your Soccer Journey For Free</a
         >
