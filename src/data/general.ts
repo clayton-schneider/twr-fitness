@@ -27,9 +27,12 @@ export const hours = [
 
 export const quickLinks = [
   { to: "/about", text: "About" },
-  { to: "/adult-personal-training", text: "Adult Personal Training" },
-  { to: "/youth-personal-training", text: "Youth Personal Training" },
-  { to: "/soccer-skill-development", text: "Soccer Skill Development" },
+  { to: "/services/adult-personal-training", text: "Adult Personal Training" },
+  { to: "/services/youth-personal-training", text: "Youth Personal Training" },
+  {
+    to: "/services/soccer-skill-development",
+    text: "Soccer Skill Development",
+  },
   { to: "/contact", text: "Contact" },
 ];
 
