@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import pricingHero from "~/assets/pages/pricing/pricing-hero.png";
+import heroCover from "~/assets/covers/hero-cover.png";
+
+import Layout from "src/layouts/Layout.astro";
+import PricingTable from "@components/PricingTable.tsx";
+import CTA from "@sections/CTA.astro";
+---
+
+<Layout
+  seo={{
+    title: "Pricing | TWR Fitness",
+    description:
+      "Find the pricing packages for the personal training packages that I offer.",
+  }}
+>
+  <section
+    class="px-edge py-20 lg:py-40 relative flex justify-center items-center"
+  >
+    <Image
+      class="absolute inset-0 h-full object-cover object-right lg:object-center"
+      quality={100}
+      src={pricingHero}
+      alt="fitness gear"
+    />
+    <Image
+      class="absolute left-0 bottom-0 right-0"
+      src={heroCover}
+      alt="decorative wave cover"
+    />
+    <div class="text-white relative z-10 text-center">
+      <div class="mx-auto max-w-4xl text-center">
+        <h1 class="text-base font-semibold leading-7 text-gray-200">Pricing</h1>
+        <p class="mt-2 text-4xl font-bold tracking-tight sm:text-5xl">
+          Flexible and Transparent Pricing
+        </p>
+      </div>
+      <p
+        class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-100"
+      >
+        Save money by signing up monthly or gathering a group for a group
+        discount. Don't want to commit? Purchase a few sessions and test my
+        methods!
+      </p>
+    </div>
+  </section>
+  <section class="bg-bg px-edge py-10 lg:py-20">
+    <div class="max-w-screen-2xl mx-auto">
+      <PricingTable />
+    </div>
+  </section>
+  <CTA />
+</Layout>

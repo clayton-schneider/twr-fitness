@@ -33,6 +33,7 @@ export const quickLinks = [
     to: "/services/soccer-skill-development",
     text: "Soccer Skill Development",
   },
+  { to: "/pricing", text: "Pricing" },
   { to: "/contact", text: "Contact" },
 ];
 
