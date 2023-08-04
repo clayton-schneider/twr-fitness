@@ -31,11 +31,11 @@ const NavMenu = ({ links }: Props) => {
             return (
               <li key={idx} className="group relative">
                 <a href={link.link}>{link.linkText}</a>
-                <ul className="z-50 w-full pt-1 pl-5 text-center text-black lg:absolute lg:left-1/2 lg:hidden lg:w-[275px] lg:-translate-x-1/2 lg:pl-0  lg:shadow lg:group-hover:block">
+                <ul className="z-50 w-full pt-1 pl-5 text-center text-black xl:absolute xl:left-1/2 xl:hidden xl:w-[275px] xl:-translate-x-1/2 xl:pl-0  xl:shadow xl:group-hover:block">
                   {link.sublinks.map((sublink, idx) => (
                     <li
                       key={idx}
-                      className="text-left first:rounded-t last:rounded-b lg:bg-white lg:text-center lg:hover:bg-primary lg:hover:text-white"
+                      className="text-left first:rounded-t last:rounded-b xl:bg-white xl:text-center xl:hover:bg-primary xl:hover:text-white"
                     >
                       <a className="block py-2 px-4" href={sublink.link}>
                         {sublink.linkText}
@@ -56,7 +56,7 @@ const NavMenu = ({ links }: Props) => {
         <li className="block w-full">
           <a
             href="/your-fitness-journey"
-            className="w-full lg:w-auto inline-block  py-5 px-6 font-bold text-xl bg-accent rounded text-white  text-center lg:text-left "
+            className="w-full xl:w-auto inline-block  py-5 px-6 font-bold text-xl bg-accent rounded text-white  text-center xl:text-left "
           >
             Start Your Fitness Journey
           </a>
