@@ -1,0 +1,71 @@
+---
+const faqs = [
+  {
+    question: "Is there parking on-site?",
+    answer:
+      "There is no direct parking but there is street parking in front of the studio, and clients can park in the Walgreens Parking lot or on Green Street around the corner.",
+  },
+  {
+    question: "What sort of amenities does the studio offer?",
+    answer:
+      "The studio offers a fully equipped training space (I am always adding new equipment for our training and taking suggestions from clients!), a bathroom, changing room, lockers, water cooler, and towels. We do not have a full locker room/shower.",
+  },
+  {
+    question:
+      "What times is TWR Fitness open for training? Are you open weekends?",
+    answer:
+      "I will run sessions as early as 6am and will train until 8pm. My afternoon availability is generally taken by coaching but you can reach out and ask about specific time slots. I am open on weekends, however I usually don’t train on Sundays.",
+  },
+  {
+    question: "What service(s) does TWR Fitness provide?",
+    answer:
+      "TWR Fitness is primarily a personal training private fitness studio where I work with adult clients to help them with their health and fitness. I also offer Youth Personal Training and private soccer lessons.",
+  },
+  {
+    question: "How do I sign up?",
+    answer:
+      "By reaching out to me directly. I am the only trainer and run the space on my own, every client works with me. You can reach out via email, cell phone, or clicking the get started buttons on the website.",
+  },
+  {
+    question: "Do you do house calls or only train in your studio?",
+    answer:
+      "I can do house calls on request. There is a travel fee added on to the session price of 15% and availability for home training will depend on my schedule.",
+  },
+];
+---
+
+<section class="bg-bg px-edge py-10 lg:py-20">
+  <div class="mx-auto max-w-7xl">
+    <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+      <div class="lg:col-span-5">
+        <h2
+          class="font-oswald text-5xl font-bold leading-10 tracking-tight text-text-dark"
+        >
+          Frequently Asked Questions
+        </h2>
+        <p class="mt-4 text-base leading-7 text-gray-600">
+          Can’t find the answer you’re looking for? Visit our <a
+            href="/contact"
+            class="font-semibold text-primary">contact page</a
+          > and reach out.
+        </p>
+      </div>
+      <div class="mt-10 lg:col-span-7 lg:mt-0">
+        <dl class="space-y-10">
+          {
+            faqs.map((faq) => (
+              <div>
+                <dt class="text-base font-semibold leading-7 text-gray-900">
+                  {faq.question}
+                </dt>
+                <dd class="mt-2 text-base leading-7 text-gray-600">
+                  {faq.answer}
+                </dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
