@@ -2,6 +2,9 @@
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 
+import { YouTube } from "@astro-community/astro-embed-youtube";
+
+// Sections
 import Services from "@sections/Services.astro";
 import Outcomes from "@sections/Outcomes.astro";
 import WhyUs from "@sections/WhyUs.astro";
@@ -37,7 +40,9 @@ import heroCover from "@imgs/covers/hero-cover.png";
       src={heroCover}
       alt="decorative wave cover"
     />
-    <div class="max-w-screen-2xl mx-auto relative z-10">
+    <div
+      class="flex flex-col-reverse items-center justify-between gap-10 lg:flex-row max-w-screen-2xl mx-auto relative z-10"
+    >
       <div
         class="my-10 lg:mt-52 max-w-[590px] mx-auto lg:mx-0 text-center lg:text-left"
       >
@@ -58,6 +63,9 @@ import heroCover from "@imgs/covers/hero-cover.png";
           class="mt-7 bg-accent py-5 px-6 rounded text-white font-bold inline-block"
           >Start Your Fitness Journey For Free</a
         >
+      </div>
+      <div class="h-full w-full max-w-[600px] shrink-0 grow">
+        <YouTube id="kYE41a_VLes" />
       </div>
     </div>
   </section>
