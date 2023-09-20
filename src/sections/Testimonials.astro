@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import catherineImg from "~/assets/reviews/catherine-sambuco.png";
 import thomasImg from "~/assets/reviews/thomas.png";
 import fredImg from "~/assets/reviews/fred.png";
+import michaelImg from "~/assets/reviews/michael-saniuk.png";
 import googleFiveStars from "~/assets/reviews/google-five-stars.png";
 
 const reviews = [
@@ -24,10 +25,18 @@ const reviews = [
   },
   {
     name: "Fred",
-    text: "“Tristan is kind, genuine and knowledgeable. He is the type of person you want to spend hours with every week. Even though I complain a lot about exercising he still gets me to complete my exercises.” ",
+    text: "“Tristan is kind, genuine and knowledgeable. He is the type of person you want to spend hours with every week. Even though I complain a lot about exercising he still gets me to complete my exercises.”",
     img: {
       src: fredImg,
       alt: "Fred in the gym",
+    },
+  },
+  {
+    name: "Michael Saniuk",
+    text: "“I started working with Tristan to train for my upcoming soccer tryouts. He helped so much with my athleticism and technical abilities. He understood my goals and helped me meet them.”",
+    img: {
+      src: michaelImg,
+      alt: "Michael playing goalie",
     },
   },
 ];
@@ -56,7 +65,7 @@ const reviews = [
         aria-label="testimonial carousel"
       >
         <div class="splide__track py-10 lg:py-20">
-          <ul class="splide__list lg:!flex lg:justify-between lg:space-x-11">
+          <ul class="splide__list">
             {
               reviews.map((review) => (
                 <li class="splide__slide grid place-items-center">
@@ -87,7 +96,6 @@ const reviews = [
   import "@splidejs/splide/css/core";
 
   new Splide(".testimonial-carousel", {
-    destroy: true,
     lazyLoad: true,
     autoplay: true,
     interval: 3000,
