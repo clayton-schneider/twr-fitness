@@ -2,11 +2,46 @@
 import { Image } from "astro:assets";
 import revolution from "~/assets/pages/about/revolution.png";
 import nasm from "~/assets/pages/about/nasm.png";
+import umass from "~/assets/pages/about/umass.png";
+import cali from "~/assets/pages/about/calisfit.png";
+import redCross from "~/assets/pages/about/red-cross.png";
 
 const qualifications = [
   {
+    org: "UMass Amherst",
+    name: "Undergraduate for Astronomy and Astrophysics",
+    img: {
+      src: umass,
+      alt: "umass logo",
+    },
+  },
+  {
+    org: "CalisFit",
+    name: "2 Year Mentorship under Kyle Crocker",
+    img: {
+      src: cali,
+      alt: "CalisFit logo",
+    },
+  },
+  {
     org: "National Academy of Sports Medicine",
     name: "Certified Personal Trainer",
+    img: {
+      src: nasm,
+      alt: "National Academy of Sports Medicine logo",
+    },
+  },
+  {
+    org: "Red Cross",
+    name: "CRP/AED Certified",
+    img: {
+      src: redCross,
+      alt: "red cross logo",
+    },
+  },
+  {
+    org: "National Academy of Sports Medicine",
+    name: "Corrective Exercise Specialist (In Training)",
     img: {
       src: nasm,
       alt: "National Academy of Sports Medicine logo",
@@ -35,11 +70,11 @@ const qualifications = [
     </p>
 
     <div
-      class="mt-10 lg:mt-20 flex gap-10 flex-col lg:flex-row items-center justify-around"
+      class="mt-10 lg:mt-20 flex gap-10 flex-col flex-wrap lg:flex-row items-center justify-around"
     >
       {
         qualifications.map((qualification) => (
-          <div class="max-w-[350px] text-center">
+          <div class="max-w-[350px] w-full text-center">
             <Image
               class="mx-auto"
               src={qualification.img.src}
