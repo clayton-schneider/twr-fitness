@@ -4,7 +4,7 @@ import aboutHero from "~/assets/pages/about/about-hero.png";
 import heroCover from "~/assets/covers/hero-cover.png";
 import cover from "~/assets/covers/top-cover.png";
 import valueImg from "~/assets/pages/about/values.png";
-import myStoryImg from "~/assets/pages/about/my-story.png";
+import myStoryImg from "~/assets/pages/about/twr-soccer.png";
 import flag from "~/assets/pages/about/flag.png";
 
 import Layout from "../layouts/Layout.astro";
@@ -116,26 +116,26 @@ const values = [
     </div>
   </section>
 
-  <section class="px-edge py-10 lg:py-20 relative xl:min-h-[1000px]">
+  <section class="bg-bg px-edge py-10 lg:py-20">
     <Image
-      class="absolute inset-0 h-full object-cover object-left xl:object-center"
+      class="mx-auto"
       quality={100}
       src={myStoryImg}
       alt="tristain of twr fitness"
     />
-    <div class="xl:hidden w-full h-full bg-black/60 absolute inset-0"></div>
 
-    <div
-      class="max-w-screen-2xl mx-auto flex justify-center xl:justify-end relative z-10"
-    >
+    <div class="max-w-screen-2xl mx-auto flex justify-center relative z-10">
       <div
-        class="xl:mt-20 max-w-xl mx-auto lg:mx-0 text-white text-center xl:text-right"
+        class="xl:mt-20 mx-auto lg:mx-0 text-text-dark text-center xl:text-left"
       >
-        <p class="font-oswald text-2xl">Leading from Experience</p>
-        <h2 class="mt-2 font-oswald font-bold text-5xl">
-          I've Been Down Your Path Before
-        </h2>
-        <div class="mt-5 space-y-3 text-lg">
+        <div class="text-center">
+          <p class="font-oswald text-2xl">Leading from Experience</p>
+          <h2 class="mt-2 font-oswald font-bold text-5xl">
+            I've Been Down Your Path Before
+          </h2>
+        </div>
+
+        <div class="mt-10 grid grid-cols-1 xl:grid-cols-3 gap-10 text-lg">
           <p>
             I have had chronic lymes disease since 2012, however the long term
             effects did not truly kick in until 2018. I spent years slowly
@@ -175,11 +175,13 @@ const values = [
 
         <ul class="mt-4 list-disc list-inside font-bold text-white text-xl">
         </ul>
-        <a
-          href="/your-fitness-journey"
-          class="mt-7 bg-accent py-5 px-6 rounded text-white font-bold inline-block"
-          >Start Your Fitness Journey For Free</a
-        >
+        <div class="mt-7 flex justify-center">
+          <a
+            href="/your-fitness-journey"
+            class="bg-accent py-5 px-6 rounded text-white font-bold inline-block"
+            >Start Your Fitness Journey For Free</a
+          >
+        </div>
       </div>
     </div>
   </section>
